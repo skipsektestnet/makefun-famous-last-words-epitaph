@@ -8,9 +8,9 @@ LINE = "Here lies my father. He went out for milk in 1998. We found him here."
 
 
 def validate():
-    """Check the epitaph is a single line of at most 150 characters."""
+    """Check the epitaph is a single line of 1-150 chars starting 'Here lies'."""
     assert LINE.count("\n") == 0, "epitaph must be a single line"
-    assert 0 < len(LINE) <= 150, f"expected 1-150 chars, got {len(LINE)}"
+    assert 1 <= len(LINE) <= 150, f"expected 1-150 chars, got {len(LINE)}"
     assert LINE.startswith("Here lies"), "epitaph must start with 'Here lies'"
     return True
 
